@@ -1,6 +1,7 @@
 import DetailsHome from "@/components/Home/details";
 import Navbar from "../components/Home/navbar";
 import ExperienceHome from "@/components/Home/experienceHome";
+import HomeProject from "@/components/Home/HomeProject";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <div className="text-2xl md:text-3xl text-white font-bold max-w-5xl mx-auto px-8  mt-40">
           I&apos;ve been building a lot of things
         </div>
+        <HomeProject />
       </div>
     </div>
   );
