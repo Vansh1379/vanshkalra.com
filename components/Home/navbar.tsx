@@ -1,5 +1,5 @@
 import Image from "next/image";
-import vansh from "../public//vansh.png";
+import vansh from "../../public/vansh.png";
 
 const navbar = () => {
   return (

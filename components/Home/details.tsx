@@ -11,6 +11,23 @@ export default function DetailsHome() {
         designs is only rivaled by his passion for finding the perfect GIF to
         express his excitement.
       </p>
+      <div className="mt-8 text-zinc-400 text-sm md:text-base max-w-2xl tracking-wide">
+        Building
+        <a
+          href=""
+          className="text-zinc-200 font-bold hover:text-cyan-500 transiton duration-500 outline-none"
+        >
+          Sommaire.ai
+        </a>
+        and
+        <a
+          href=""
+          className="text-zinc-200 font-bold hover:text-cyan-500 transiton duration-500"
+        >
+          Shoppr
+        </a>
+        when I&apos;m not working on my day job.
+      </div>
     </div>
   );
 }
