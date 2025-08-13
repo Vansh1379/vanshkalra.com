@@ -74,10 +74,10 @@ const technologies = [
   //   name: "Recoil",
   //   icon: recoil,
   // },
-  // {
-  //   name: "Tailwind CSS",
-  //   icon: tailwind,
-  // },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
   // {
   //   name: "Mern",
   //   icon: mern,
