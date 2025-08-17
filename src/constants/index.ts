@@ -1,5 +1,4 @@
 import {
-  AIModel,
   css,
   chatpdf,
   docker,
@@ -22,6 +21,7 @@ import {
   Python,
 } from "@/assets";
 
+import Sommaire from "../assets/SommaireAI.png";
 export const navLinks = [
   {
     id: "/",
@@ -125,15 +125,14 @@ const experiences = [
 
 const projects = [
   {
-    name: "Sommaire Ai",
+    name: "Sommaire AI",
     description:
       "An AI based chatbot built using langchainJs, GroqAI, Vercel ai/sdk and many more that can help you solve your problems, find relevant image and videos and even generate followup questions.",
     isDeployed: false,
     deployedLink: "",
 
-    image: AIModel,
-    github_link:
-      "https://github.com/Pratham271/100xengineer/tree/initial-setup",
+    image: Sommaire,
+    github_link: "https://github.com/Vansh1379/Sommaira-ai",
   },
   {
     name: "Shoppr",
