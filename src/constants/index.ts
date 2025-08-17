@@ -125,7 +125,7 @@ const experiences = [
 
 const projects = [
   {
-    name: "EnigmaAI",
+    name: "Sommaire Ai",
     description:
       "An AI based chatbot built using langchainJs, GroqAI, Vercel ai/sdk and many more that can help you solve your problems, find relevant image and videos and even generate followup questions.",
     isDeployed: false,
@@ -136,7 +136,7 @@ const projects = [
       "https://github.com/Pratham271/100xengineer/tree/initial-setup",
   },
   {
-    name: "Settle",
+    name: "Shoppr",
     description:
       "Web-based platform that allows users to pay their friends and family in a secure fashion. With Settle, settle all your payments.",
     isDeployed: false,
@@ -146,7 +146,7 @@ const projects = [
     github_link: "https://github.com/Pratham271/Settle",
   },
   {
-    name: "Chatvers",
+    name: "V-Pay",
     description:
       "An AI chatbot that quickly scan your documents, youtube links and even website links to deliver the answers you need, saving you valuable time and frustration.",
     isDeployed: true,
@@ -155,7 +155,7 @@ const projects = [
     github_link: "https://github.com/Pratham271/Chatpdf",
   },
   {
-    name: "Write.it",
+    name: "Medium",
     description:
       "Web application that enables users to publish their thoughts and learnings as blogs and search other people blogs too.You can ask the inhouse AI to write a blog for you and it will get you title, content and even and image for you.",
     isDeployed: true,

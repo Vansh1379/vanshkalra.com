@@ -7,7 +7,7 @@ import { cn } from "@/utils/cn";
 import { Boxes } from "./ui/background-boxes";
 import Image from "next/image";
 
-const TechComponent = () => {
+const  TechComponent = () => {
   return (
     <div className="h-[155vh] sm:h-screen relative w-full overflow-hidden bg-black flex flex-col items-center justify-center rounded-lg">
       <div className="absolute inset-0 w-full h-full bg-black z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
