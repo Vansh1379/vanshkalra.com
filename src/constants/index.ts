@@ -11,7 +11,6 @@ import {
   postgres,
   prisma,
   recoil,
-  Settle,
   tailwind,
   turborepo,
   typescript,
@@ -22,6 +21,8 @@ import {
 } from "@/assets";
 
 import Sommaire from "../assets/SommaireAI.png";
+import Shoppr from "../assets/Shoppr.png";
+
 export const navLinks = [
   {
     id: "/",
@@ -42,6 +43,10 @@ export const navLinks = [
   {
     id: "/Contact",
     title: "Contact",
+  },
+  {
+    id: "https://drive.google.com/file/d/12tyQ7A04zbw_ui3h_XZJJeF6uEBGjehk/view?usp=sharing",
+    title: "Resume",
   },
 ];
 
@@ -112,12 +117,12 @@ const experiences = [
   {
     title: "Full Stack Developer",
     company_name: "Rudra Infocom",
-    date: "Currently Working Here", // You'll need to fill in the actual dates
+    date: "December 2022 - June 2023", // You'll need to fill in the actual dates
     points: [
-      "Developed an AI chatbot using Vercel AI to launch and manage Meta and Google marketing campaigns.",
-      "Migrated the chatbot's core technology to LangGraph for enhanced capabilities.",
-      "Implemented the chatbot with LlamaIndex to provide deep insights into Google and Meta campaigns.",
-      "Created foundational libraries to streamline fetching and pushing campaign data, serving as the infrastructure for these products.",
+      "Designed, developed, and deployed the official company website https://rudrainfo.co.in from scratch.",
+      "uilt and contributed to 4+ client projects, boosting sales and customer engagement.",
+      "Worked across the full stack using Next.js, PostgreSQL, Tailwind CSS, Node.js, and Express.js.",
+      "Collaborated with teams to deliver scalable, user-friendly, and high-performance web applications.",
       "Contributed to schema design and DevOps activities to support product development and deployment.",
     ],
   },
@@ -127,7 +132,7 @@ const projects = [
   {
     name: "Sommaire AI",
     description:
-      "An AI based chatbot built using langchainJs, GroqAI, Vercel ai/sdk and many more that can help you solve your problems, find relevant image and videos and even generate followup questions.",
+      "Sommaire AI is an intelligent tool where users can upload any PDF and chat with it in natural language. Powered by the ChatGPT model on the backend, it delivers instant answers, summaries, and insights, making document understanding seamless and efficient.",
     isDeployed: false,
     deployedLink: "",
 
@@ -137,17 +142,17 @@ const projects = [
   {
     name: "Shoppr",
     description:
-      "Web-based platform that allows users to pay their friends and family in a secure fashion. With Settle, settle all your payments.",
-    isDeployed: false,
-    deployedLink: "",
+      "Shoppr’s UI is crafted to be visually stunning and highly interactive — blending modern aesthetics with intuitive navigation, responsive layouts, and seamless animations, while integrating secure Razorpay payments for a smooth, engaging shopping experience.",
+    isDeployed: true,
+    deployedLink: "https://shoppr-beta.vercel.app/home",
 
-    image: Settle,
-    github_link: "https://github.com/Pratham271/Settle",
+    image: Shoppr,
+    github_link: "https://github.com/Vansh1379/shoppr",
   },
   {
     name: "V-Pay",
     description:
-      "An AI chatbot that quickly scan your documents, youtube links and even website links to deliver the answers you need, saving you valuable time and frustration.",
+      "Web-based platform that allows users to pay their friends and family in a secure fashion. With Settle, settle all your payments.",
     isDeployed: true,
     deployedLink: "https://chatvers.com",
     image: chatpdf,

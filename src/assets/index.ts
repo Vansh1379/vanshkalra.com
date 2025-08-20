@@ -1,4 +1,3 @@
-import Settle from "./Settle.png";
 import LinkShrink from "./LinkShrink.png";
 import WriteIt from "./WriteIt.png";
 import css from "./tech/css.png";
@@ -20,7 +19,6 @@ import Llamaindex from "./tech/Llamindex.jpeg";
 import Python from "./tech/python.png";
 
 export {
-  Settle,
   LinkShrink,
   WriteIt,
   css,
