@@ -4,7 +4,6 @@ import Button from "./helper/Button";
 import Hamburger from "./helper/Hamburger";
 import Link from "next/link";
 import { navLinks } from "@/constants";
-import { Bot } from "lucide-react";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
