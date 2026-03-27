@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 
 interface CardProps {
   title: string;
@@ -20,45 +21,47 @@ const ProjectCard = ({
   isDeployed,
 }: CardProps) => {
   return (
-    <div className="mt-8 border border-neutral-500 md:ml-10 p-6 rounded-md bg-zinc-300 ">
-      <Image
-        src={img}
-        alt=""
-        height="250"
-        width="600"
-        className="object-contain"
-      />
-      <p className="text-base sm:text-xl  mt-4 mb-2 text-neutral-900">
-        {title}
-      </p>
-
-      <p className="text-sm text-neutral-800">{description}</p>
-      <div className="flex">
-        <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1  mt-4 text-xs font-bold bg-zinc-800 z-20">
-          <a href={codeLink} target="_blank">
-            Github Link
+    <div className="group mt-8 md:ml-6 rounded-2xl bg-neutral-900/50 border border-white/5 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-white/10 hover:shadow-2xl hover:shadow-teal-500/5 hover:-translate-y-1">
+      <div className="overflow-hidden">
+        <Image
+          src={img}
+          alt={title}
+          height={250}
+          width={600}
+          className="object-cover w-full h-48 transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-teal-300 transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-sm text-neutral-400 leading-relaxed line-clamp-3">
+          {description}
+        </p>
+        <div className="flex gap-3 mt-5">
+          <a
+            href={codeLink}
+            target="_blank"
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/20 transition-all duration-200"
+          >
+            <FaGithub className="text-sm" />
+            Code
           </a>
-          <span className=" rounded-full text-[0.6rem] px-2 py-0 text-white">
-            <FaArrowUpRightFromSquare />
-          </span>
-        </button>
-        <button
-          disabled={isDeployed}
-          className={`rounded-full ml-4 pl-4 pr-1 py-1 ${
-            isDeployed ? "opacity-100" : "opacity-50"
-          } text-white flex items-center space-x-1  mt-4 text-xs font-bold bg-zinc-800 z-20`}
-        >
           {isDeployed ? (
-            <a href={deployedLink} target="_blank">
-              <span>Live Link</span>
+            <a
+              href={deployedLink}
+              target="_blank"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-teal-300 bg-teal-500/10 border border-teal-500/20 rounded-lg hover:bg-teal-500/20 hover:border-teal-500/30 transition-all duration-200"
+            >
+              Live
+              <FaArrowUpRightFromSquare className="text-[0.6rem]" />
             </a>
           ) : (
-            <span>Live Link</span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-neutral-600 bg-white/[0.02] border border-white/5 rounded-lg cursor-not-allowed">
+              Not Deployed
+            </span>
           )}
-          <span className=" rounded-full text-[0.6rem]  px-2 py-0 text-white">
-            <FaArrowUpRightFromSquare />
-          </span>
-        </button>
+        </div>
       </div>
     </div>
   );

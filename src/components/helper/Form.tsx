@@ -48,17 +48,13 @@ export default function Form() {
 
   return (
     <div
-      className={`w-96 md:w-[600px] mx-auto rounded-none md:rounded-2xl p-4 md:px-8 shadow-input bg-black`}
+      className="w-full mx-auto rounded-2xl p-6 md:px-8 bg-neutral-900/30 border border-white/5 backdrop-blur-sm"
     >
       {showAlert ? <Alert name={name} setShowAlert={setShowAlert} /> : null}
-      <div className={`${showAlert ? "opacity-50" : "opacity-100"}`}>
-        <h2 className="font-bold text-2xl text-neutral-200 text-center">
-          Get In Touch
-        </h2>
-
-        <form className="my-2" onSubmit={handleSubmit}>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="name">Name</Label>
+      <div className={`${showAlert ? "opacity-50 pointer-events-none" : "opacity-100"}`}>
+        <form className="space-y-5" onSubmit={handleSubmit}>
+          <LabelInputContainer>
+            <Label htmlFor="name" className="text-sm text-neutral-400">Name</Label>
             <Input
               onChange={(e) => setName(e.target.value)}
               id="name"
@@ -66,8 +62,8 @@ export default function Form() {
               type="text"
             />
           </LabelInputContainer>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="email">Email Address</Label>
+          <LabelInputContainer>
+            <Label htmlFor="email" className="text-sm text-neutral-400">Email Address</Label>
             <Input
               onChange={(e) => setEmail(e.target.value)}
               id="email"
@@ -75,8 +71,8 @@ export default function Form() {
               type="email"
             />
           </LabelInputContainer>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="message">Message</Label>
+          <LabelInputContainer>
+            <Label htmlFor="message" className="text-sm text-neutral-400">Message</Label>
             <Textarea
               onChange={(e) => setBody(e.target.value)}
               id="message"
@@ -87,70 +83,45 @@ export default function Form() {
             disabled={
               name.length === 0 || email.length === 0 || body.length === 0
             }
-            className="bg-gradient-to-br relative group/btn  from-zinc-900 to-zinc-900  block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            className="relative group/btn w-full h-11 rounded-xl bg-teal-600 hover:bg-teal-500 disabled:opacity-40 disabled:hover:bg-teal-600 text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25"
             type="submit"
           >
-            Send
-            <BottomGradient />
+            Send Message
           </button>
 
-          <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+          <div className="bg-gradient-to-r from-transparent via-neutral-800 to-transparent my-6 h-[1px] w-full" />
 
-          <div className="flex flex-col space-y-4">
-            <button
-              className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium  bg-zinc-900 shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-              type="button"
+          <div className="flex gap-3">
+            <a
+              href="https://github.com/Vansh1379"
+              target="_blank"
+              className="flex-1 flex items-center justify-center gap-2 px-4 h-10 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 text-neutral-400 hover:text-white transition-all duration-200"
             >
-              <IconBrandGithub className="h-4 w-4 text-neutral-300" />
-              <span className="text-neutral-300 text-sm">
-                <a href="https://github.com/Vansh1379" target="_blank">
-                  GitHub
-                </a>
-              </span>
-              <BottomGradient />
-            </button>
-            <button
-              className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium  bg-zinc-900 shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-              type="button"
+              <IconBrandGithub className="h-4 w-4" />
+              <span className="text-sm">GitHub</span>
+            </a>
+            <a
+              href="https://x.com/VanshKalra1379"
+              target="_blank"
+              className="flex-1 flex items-center justify-center gap-2 px-4 h-10 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 text-neutral-400 hover:text-white transition-all duration-200"
             >
-              <IconBrandX className="h-4 w-4 text-neutral-300" />
-              <span className="text-neutral-300 text-sm">
-                <a href="https://x.com/VanshKalra1379" target="_blank">
-                  X &#40;Formerly Twitter&#41;
-                </a>
-              </span>
-              <BottomGradient />
-            </button>
-            <button
-              className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium  bg-zinc-900 shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-              type="button"
+              <IconBrandX className="h-4 w-4" />
+              <span className="text-sm">X</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vansh-kalra/"
+              target="_blank"
+              className="flex-1 flex items-center justify-center gap-2 px-4 h-10 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 text-neutral-400 hover:text-white transition-all duration-200"
             >
-              <IconBrandLinkedin className="h-4 w-4 text-neutral-300" />
-              <span className="text-neutral-300 text-sm">
-                <a
-                  href="https://www.linkedin.com/in/vansh-kalra/"
-                  target="_blank"
-                >
-                  LinkedIn
-                </a>
-              </span>
-              <BottomGradient />
-            </button>
+              <IconBrandLinkedin className="h-4 w-4" />
+              <span className="text-sm">LinkedIn</span>
+            </a>
           </div>
         </form>
       </div>
     </div>
   );
 }
-
-const BottomGradient = () => {
-  return (
-    <>
-      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
-    </>
-  );
-};
 
 const LabelInputContainer = ({
   children,
