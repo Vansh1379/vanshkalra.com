@@ -1,7 +1,7 @@
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import NavBar from "@/components/NavBar";
 import Link from "next/link";
-import { projects } from "@/constants";
+import { projects, technologies } from "@/constants";
 
 export default function Home() {
   return (
@@ -39,7 +39,7 @@ export default function Home() {
                     href="https://github.com/Vansh1379"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl border border-neutral-800 hover:border-neutral-600 text-neutral-400 hover:text-white transition-all duration-200 hover:bg-white/5"
+                    className="p-2.5 rounded-xl border border-neutral-800 hover:border-teal-500/50 text-neutral-400 hover:text-teal-400 transition-all duration-300 hover:bg-teal-500/5 hover:shadow-lg hover:shadow-teal-500/10"
                   >
                     <svg
                       className="w-5 h-5"
@@ -53,7 +53,7 @@ export default function Home() {
                     href="https://linkedin.com/in/vansh-kalra-626444228"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl border border-neutral-800 hover:border-neutral-600 text-neutral-400 hover:text-white transition-all duration-200 hover:bg-white/5"
+                    className="p-2.5 rounded-xl border border-neutral-800 hover:border-teal-500/50 text-neutral-400 hover:text-teal-400 transition-all duration-300 hover:bg-teal-500/5 hover:shadow-lg hover:shadow-teal-500/10"
                   >
                     <svg
                       className="w-5 h-5"
@@ -65,7 +65,7 @@ export default function Home() {
                   </a>
                   <a
                     href="mailto:vanshkalra1379@gmail.com"
-                    className="p-2.5 rounded-xl border border-neutral-800 hover:border-neutral-600 text-neutral-400 hover:text-white transition-all duration-200 hover:bg-white/5"
+                    className="p-2.5 rounded-xl border border-neutral-800 hover:border-teal-500/50 text-neutral-400 hover:text-teal-400 transition-all duration-300 hover:bg-teal-500/5 hover:shadow-lg hover:shadow-teal-500/10"
                   >
                     <svg
                       className="w-5 h-5"
@@ -139,11 +139,11 @@ export default function Home() {
               { value: "10+", label: "Technologies" },
               { value: "100%", label: "Passion" },
             ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
+              <div key={stat.label} className="group">
+                <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 group-hover:from-teal-300 group-hover:to-teal-500 transition-all duration-300">
                   {stat.value}
                 </div>
-                <div className="text-sm text-neutral-500 mt-1">
+                <div className="text-sm text-neutral-500 mt-1 group-hover:text-neutral-400 transition-colors duration-300">
                   {stat.label}
                 </div>
               </div>
@@ -152,25 +152,59 @@ export default function Home() {
         </div>
 
         {/* ── About Section ── */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-20">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-px bg-teal-500" />
             <span className="text-sm text-teal-400 uppercase tracking-widest font-medium">
               About Me
             </span>
           </div>
-          <p className="text-neutral-300 text-lg md:text-xl leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+            Building digital experiences that{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-300">
+              matter
+            </span>
+          </h2>
+          <p className="text-neutral-400 text-lg md:text-xl leading-relaxed">
             I&apos;m a B-Tech Computer Science graduate from JMIT, Radaur who
             loves building polished, user-centric web experiences. I work across
             the full stack with{" "}
-            <span className="text-white font-medium">Next.js</span>,{" "}
-            <span className="text-white font-medium">TypeScript</span>,{" "}
-            <span className="text-white font-medium">PostgreSQL</span>, and more
-            — turning ideas into fast, reliable products. Lately I&apos;ve been
-            diving deep into{" "}
-            <span className="text-white font-medium">AI tooling</span> and
+            <span className="text-neutral-200 font-medium">Next.js</span>,{" "}
+            <span className="text-neutral-200 font-medium">TypeScript</span>,{" "}
+            <span className="text-neutral-200 font-medium">PostgreSQL</span>,
+            and more — turning ideas into fast, reliable products. Lately
+            I&apos;ve been diving deep into{" "}
+            <span className="text-neutral-200 font-medium">AI tooling</span> and
             contributing to Open Source.
           </p>
+        </div>
+
+        {/* ── Tech Stack ── */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-24">
+          <div className="flex items-center gap-3 mb-10">
+            <div className="w-10 h-px bg-teal-500" />
+            <span className="text-sm text-teal-400 uppercase tracking-widest font-medium">
+              Tech Stack
+            </span>
+          </div>
+
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+            {technologies.map((tech) => (
+              <div
+                key={tech.name}
+                className="group flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.06] hover:border-teal-500/30 transition-all duration-300"
+              >
+                <img
+                  src={tech.icon.src}
+                  alt={tech.name}
+                  className="w-5 h-5 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                <span className="text-sm text-neutral-400 group-hover:text-neutral-200 transition-colors duration-300">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* ── Featured Projects ── */}
@@ -197,20 +231,36 @@ export default function Home() {
                 href={project.github_link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] overflow-hidden transition-all duration-300 hover:border-white/10 hover:-translate-y-1"
+                className="group relative rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] overflow-hidden transition-all duration-500 hover:border-teal-500/20 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/5"
               >
+                <div className="absolute inset-0 bg-gradient-to-b from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/5 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={project.image.src}
                     alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="text-white font-semibold text-lg">
-                    {project.name}
-                  </h3>
-                  <p className="text-neutral-500 text-sm mt-2 line-clamp-2">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-white font-semibold text-lg group-hover:text-teal-300 transition-colors duration-300">
+                      {project.name}
+                    </h3>
+                    <svg
+                      className="w-4 h-4 text-neutral-600 group-hover:text-teal-400 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-neutral-500 text-sm line-clamp-2">
                     {project.description}
                   </p>
                 </div>
@@ -218,6 +268,75 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        {/* ── CTA Section ── */}
+        <div className="relative z-10 border-t border-white/5">
+          <div className="max-w-4xl mx-auto px-6 py-24 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              Let&apos;s build something{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-300">
+                great
+              </span>{" "}
+              together
+            </h2>
+            <p className="text-neutral-400 text-lg max-w-2xl mx-auto mb-10">
+              I&apos;m always open to discussing new projects, creative ideas, or
+              opportunities to be part of something amazing.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/Contact"
+                className="group px-8 py-4 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25 hover:-translate-y-0.5"
+              >
+                Start a Conversation
+                <span className="inline-block ml-2 transition-transform duration-200 group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </Link>
+              <a
+                href="https://drive.google.com/file/d/12tyQ7A04zbw_ui3h_XZJJeF6uEBGjehk/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-xl border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium transition-all duration-300 hover:bg-white/5 hover:-translate-y-0.5"
+              >
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Footer ── */}
+        <footer className="relative z-10 border-t border-white/5 bg-neutral-950">
+          <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <span className="text-sm text-neutral-600">
+              &copy; {new Date().getFullYear()} Vansh Kalra. All rights reserved.
+            </span>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://github.com/Vansh1379"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-neutral-600 hover:text-teal-400 transition-colors duration-200"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/vansh-kalra-626444228"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-neutral-600 hover:text-teal-400 transition-colors duration-200"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="mailto:vanshkalra1379@gmail.com"
+                className="text-sm text-neutral-600 hover:text-teal-400 transition-colors duration-200"
+              >
+                Email
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
