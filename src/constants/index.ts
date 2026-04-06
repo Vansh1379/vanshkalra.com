@@ -117,10 +117,10 @@ const experiences = [
   {
     title: "Full Stack Developer",
     company_name: "Rudra Infocom",
-    date: "December 2022 - June 2023", // You'll need to fill in the actual dates
+    date: "December 2022 - June 2023",
     points: [
       "Designed, developed, and deployed the official company website https://rudrainfo.co.in from scratch.",
-      "uilt and contributed to 4+ client projects, boosting sales and customer engagement.",
+      "Built and contributed to 4+ client projects, boosting sales and customer engagement.",
       "Worked across the full stack using Next.js, PostgreSQL, Tailwind CSS, Node.js, and Express.js.",
       "Collaborated with teams to deliver scalable, user-friendly, and high-performance web applications.",
       "Contributed to schema design and DevOps activities to support product development and deployment.",
@@ -132,27 +132,28 @@ const projects = [
   {
     name: "Sommaire AI",
     description:
-      "Sommaire AI is an intelligent tool where users can upload any PDF and chat with it in natural language. Powered by the ChatGPT model on the backend, it delivers instant answers, summaries, and insights, making document understanding seamless and efficient.",
+      "An intelligent tool where users upload any PDF and chat with it in natural language. Powered by ChatGPT on the backend, it delivers instant answers, summaries, and insights — making document understanding seamless.",
+    tags: ["Next.js", "OpenAI", "LangChain", "Pinecone", "TypeScript"],
     isDeployed: false,
     deployedLink: "",
-
     image: Sommaire,
     github_link: "https://github.com/Vansh1379/Sommaira-ai",
   },
   {
     name: "Shoppr",
     description:
-      "Shoppr’s UI is crafted to be visually stunning and highly interactive — blending modern aesthetics with intuitive navigation, responsive layouts, and seamless animations, while integrating secure Razorpay payments for a smooth, engaging shopping experience.",
+      "A visually stunning e-commerce platform with intuitive navigation, responsive layouts, and seamless animations — integrated with secure Razorpay payments for a smooth shopping experience.",
+    tags: ["Next.js", "Razorpay", "Tailwind CSS", "TypeScript", "Prisma"],
     isDeployed: true,
     deployedLink: "https://shoppr-beta.vercel.app/home",
-
     image: Shoppr,
     github_link: "https://github.com/Vansh1379/shoppr",
   },
   {
     name: "V-Pay",
     description:
-      "Web-based platform that allows users to pay their friends and family in a secure fashion. With Settle, settle all your payments.",
+      "A web-based payment platform that allows users to send money to friends and family securely. Simple, fast, and reliable digital transactions.",
+    tags: ["Next.js", "PostgreSQL", "Express.js", "Node.js", "Tailwind CSS"],
     isDeployed: true,
     deployedLink: "https://chatvers.com",
     image: chatpdf,
@@ -161,17 +162,18 @@ const projects = [
   {
     name: "Medium",
     description:
-      "Web application that enables users to publish their thoughts and learnings as blogs and search other people blogs too.You can ask the inhouse AI to write a blog for you and it will get you title, content and even and image for you.",
+      "A blogging platform where users publish thoughts and discover others’ blogs. Features an AI writing assistant that generates titles, content, and images for you.",
+    tags: ["Next.js", "OpenAI", "Prisma", "PostgreSQL", "TypeScript"],
     isDeployed: true,
     deployedLink: "https://write-with-ai.vercel.app/",
-
     image: WriteIt,
     github_link: "https://github.com/Pratham271/write.it",
   },
   {
     name: "Link Shrink",
     description:
-      "Don't copy paste the large url just shrink it using Link-Shrink an in house link shortener built without using any external library.",
+      "A lightweight URL shortener built from scratch without any external libraries. Paste a long URL, get a short one — simple and fast.",
+    tags: ["Next.js", "Node.js", "TypeScript", "Tailwind CSS"],
     isDeployed: true,
     deployedLink: "https://link-shrink-5el0.vercel.app/",
     image: LinkShrink,

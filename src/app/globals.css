@@ -52,6 +52,16 @@ body {
   animation: gradient-shift 4s ease infinite;
 }
 
+/* Slow pulse for avatar glow */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
 /* Glow pulse for cards */
 @keyframes glow-pulse {
   0%, 100% { opacity: 0; }
@@ -81,4 +91,10 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(20, 184, 166, 0.3);
+  color: #fff;
 }

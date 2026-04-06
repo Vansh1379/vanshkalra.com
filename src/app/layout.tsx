@@ -6,9 +6,14 @@ import Providers from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Vansh Kalra",
+  title: "Vansh Kalra — Full Stack Developer",
   description:
-    "Discover the creative prowess of Vansh Portfolio, showcasing expertly crafted web design, development, and beyond. Dive into a world where innovation meets functionality, and every project tells a unique story. Explore our portfolio to find inspiration for your next digital venture. Let's elevate your online presence together with our tailored solutions and unmatched expertise.",
+    "Full Stack Developer building fast, polished web experiences with Next.js, TypeScript, and AI tooling. Explore my projects and get in touch.",
+  openGraph: {
+    title: "Vansh Kalra — Full Stack Developer",
+    description: "Building fast, polished web experiences with Next.js, TypeScript & AI tooling.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

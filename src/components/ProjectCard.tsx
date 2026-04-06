@@ -10,6 +10,7 @@ interface CardProps {
   codeLink: string;
   deployedLink: string;
   isDeployed: boolean;
+  tags?: string[];
 }
 
 const ProjectCard = ({
@@ -19,9 +20,10 @@ const ProjectCard = ({
   codeLink,
   deployedLink,
   isDeployed,
+  tags = [],
 }: CardProps) => {
   return (
-    <div className="group mt-8 md:ml-6 rounded-2xl bg-neutral-900/50 border border-white/5 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-white/10 hover:shadow-2xl hover:shadow-teal-500/5 hover:-translate-y-1">
+    <div className="group mt-8 md:ml-6 rounded-2xl bg-neutral-900/50 border border-white/5 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-teal-500/20 hover:shadow-2xl hover:shadow-teal-500/5 hover:-translate-y-1">
       <div className="overflow-hidden">
         <Image
           src={img}
@@ -38,7 +40,21 @@ const ProjectCard = ({
         <p className="text-sm text-neutral-400 leading-relaxed line-clamp-3">
           {description}
         </p>
-        <div className="flex gap-3 mt-5">
+
+        {tags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-3">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-2 py-0.5 text-[11px] font-medium rounded-md bg-teal-500/10 text-teal-400/80 border border-teal-500/10"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="flex gap-3 mt-4">
           <a
             href={codeLink}
             target="_blank"
