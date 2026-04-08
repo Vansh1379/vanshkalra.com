@@ -5,6 +5,8 @@ import NavBar from "@/components/NavBar";
 import Link from "next/link";
 import { projects, technologies } from "@/constants";
 import { motion } from "framer-motion";
+import RotatingText from "@/components/ui/RotatingText";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -45,21 +47,40 @@ export default function Home() {
                   </span>
                 </motion.h1>
 
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.35 }}
+                  className="mt-4 text-2xl md:text-3xl font-semibold text-neutral-300 tracking-tight"
+                >
+                  I&apos;m a{" "}
+                  <RotatingText
+                    words={[
+                      "Full Stack Developer",
+                      "AI Enthusiast",
+                      "Open Source Contributor",
+                      "Problem Solver",
+                    ]}
+                    className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-300"
+                  />
+                </motion.div>
+
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="mt-5 text-lg md:text-xl text-neutral-400 tracking-wide max-w-xl mx-auto lg:mx-0"
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="mt-4 text-lg md:text-xl text-neutral-500 tracking-wide max-w-xl mx-auto lg:mx-0 leading-relaxed"
                 >
-                  Full Stack Developer building fast, polished web experiences
-                  with Next.js, TypeScript &amp; AI tooling.
+                  I craft fast, polished web experiences with Next.js,
+                  TypeScript &amp; AI tooling — turning ideas into products
+                  people love.
                 </motion.p>
 
                 {/* Social row */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.55 }}
+                  transition={{ duration: 0.5, delay: 0.65 }}
                   className="flex items-center gap-4 mt-8 justify-center lg:justify-start"
                 >
                   <a
@@ -96,7 +117,7 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.65 }}
+                  transition={{ duration: 0.5, delay: 0.75 }}
                   className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start"
                 >
                   <Link
@@ -158,10 +179,10 @@ export default function Home() {
         <div className="relative z-10 border-y border-white/5 bg-neutral-950/80 backdrop-blur-sm">
           <StaggerChildren className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" staggerDelay={0.1}>
             {[
-              { value: "5+", label: "Projects Built" },
-              { value: "1+", label: "Years Experience" },
+              { value: "5+", label: "Projects Shipped" },
+              { value: "1+", label: "Years Building" },
               { value: "10+", label: "Technologies" },
-              { value: "100%", label: "Passion" },
+              { value: "4+", label: "Client Projects" },
             ].map((stat) => (
               <StaggerItem key={stat.label}>
                 <div className="group cursor-default">
@@ -209,6 +230,67 @@ export default function Home() {
               contributing to Open Source.
             </p>
           </FadeIn>
+        </div>
+
+        {/* ── What I Do ── */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-24">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-10 h-px bg-teal-500" />
+              <span className="text-sm text-teal-400 uppercase tracking-widest font-medium">
+                What I Do
+              </span>
+            </div>
+          </FadeIn>
+
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.12}>
+            {[
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                  </svg>
+                ),
+                title: "Full Stack Development",
+                desc: "End-to-end web apps with Next.js, TypeScript, PostgreSQL, and Prisma — from database design to pixel-perfect UI.",
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                  </svg>
+                ),
+                title: "AI Integration",
+                desc: "Building intelligent features with LangChain, OpenAI, and vector databases — from chatbots to document understanding.",
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+                  </svg>
+                ),
+                title: "DevOps & Deployment",
+                desc: "Containerized deployments with Docker, monorepo management with Turborepo, and CI/CD pipelines for reliable shipping.",
+              },
+            ].map((card) => (
+              <StaggerItem key={card.title}>
+                <div className="group relative p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500 hover:border-teal-500/20 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/5 h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/5 group-hover:to-transparent rounded-2xl transition-all duration-500 pointer-events-none" />
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-4 group-hover:bg-teal-500/20 group-hover:scale-110 transition-all duration-300">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-teal-300 transition-colors duration-300">
+                      {card.title}
+                    </h3>
+                    <p className="text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-300">
+                      {card.desc}
+                    </p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
         </div>
 
         {/* ── Tech Stack ── */}
@@ -357,37 +439,7 @@ export default function Home() {
         </div>
 
         {/* ── Footer ── */}
-        <footer className="relative z-10 border-t border-white/5 bg-neutral-950">
-          <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <span className="text-sm text-neutral-600">
-              &copy; {new Date().getFullYear()} Vansh Kalra
-            </span>
-            <div className="flex items-center gap-6">
-              <a
-                href="https://github.com/Vansh1379"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-neutral-600 hover:text-teal-400 transition-colors duration-200"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/vansh-kalra-626444228"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-neutral-600 hover:text-teal-400 transition-colors duration-200"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="mailto:vanshkalra1379@gmail.com"
-                className="text-sm text-neutral-600 hover:text-teal-400 transition-colors duration-200"
-              >
-                Email
-              </a>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

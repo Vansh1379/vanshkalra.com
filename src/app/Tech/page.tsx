@@ -1,9 +1,18 @@
-import React from 'react'
-import TechComponent from '@/components/TechComponent';
-const page = () => {
-  return (
-    <TechComponent/>
-  )
-}
+"use client";
+import React from "react";
+import TechComponent from "@/components/TechComponent";
+import Footer from "@/components/Footer";
+import PageTransition from "@/components/ui/PageTransition";
 
-export default page
+const Page = () => {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <PageTransition>
+        <TechComponent />
+      </PageTransition>
+      <Footer />
+    </div>
+  );
+};
+
+export default Page;

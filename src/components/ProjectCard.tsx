@@ -23,7 +23,7 @@ const ProjectCard = ({
   tags = [],
 }: CardProps) => {
   return (
-    <div className="group mt-8 md:ml-6 rounded-2xl bg-neutral-900/50 border border-white/5 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-teal-500/20 hover:shadow-2xl hover:shadow-teal-500/5 hover:-translate-y-1">
+    <div className="group h-full rounded-2xl bg-neutral-900/50 border border-white/5 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-teal-500/20 hover:shadow-2xl hover:shadow-teal-500/5 hover:-translate-y-1 flex flex-col">
       <div className="overflow-hidden">
         <Image
           src={img}
@@ -33,7 +33,7 @@ const ProjectCard = ({
           className="object-cover w-full h-48 transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-teal-300 transition-colors duration-300">
           {title}
         </h3>
@@ -54,7 +54,7 @@ const ProjectCard = ({
           </div>
         )}
 
-        <div className="flex gap-3 mt-4">
+        <div className="flex gap-3 mt-auto pt-4">
           <a
             href={codeLink}
             target="_blank"
