@@ -14,7 +14,9 @@ export default function Home() {
       <NavBar />
       <div className="relative">
         {/* ── Hero Section ── */}
-        <div className="min-h-[calc(100vh-60px)] w-full rounded-md relative flex flex-col items-center justify-center antialiased px-4">
+        <div className="min-h-[calc(100vh-60px)] w-full rounded-md relative flex flex-col items-center justify-center antialiased px-4 overflow-hidden">
+          {/* Grid pattern */}
+          <div className="absolute inset-0 hero-grid pointer-events-none" />
           {/* Gradient orbs */}
           <div className="absolute top-1/4 -left-32 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-cyan-500/8 rounded-full blur-[100px] pointer-events-none" />
@@ -147,6 +149,7 @@ export default function Home() {
               >
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-transparent rounded-full blur-2xl animate-pulse-slow" />
+                  <div className="absolute -inset-1 rounded-full animate-spin-slow pointer-events-none" style={{ background: "conic-gradient(from 0deg, transparent 0deg, rgba(20,184,166,0.6) 60deg, transparent 140deg, rgba(34,211,238,0.4) 220deg, transparent 300deg)" }} />
                   <div className="relative bg-gradient-to-b from-teal-500/80 to-teal-600/40 rounded-full h-64 w-64 md:w-72 md:h-72 lg:w-80 lg:h-80 overflow-hidden ring-2 ring-teal-500/20 ring-offset-4 ring-offset-neutral-950 shadow-2xl shadow-teal-500/10">
                     <img
                       src="avatar.png"
@@ -177,7 +180,7 @@ export default function Home() {
 
         {/* ── Stats Strip ── */}
         <div className="relative z-10 border-y border-white/5 bg-neutral-950/80 backdrop-blur-sm">
-          <StaggerChildren className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" staggerDelay={0.1}>
+          <StaggerChildren className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 text-center divide-x divide-white/5" staggerDelay={0.1}>
             {[
               { value: "5+", label: "Projects Shipped" },
               { value: "1+", label: "Years Building" },
@@ -185,7 +188,7 @@ export default function Home() {
               { value: "4+", label: "Client Projects" },
             ].map((stat) => (
               <StaggerItem key={stat.label}>
-                <div className="group cursor-default">
+                <div className="group cursor-default px-4">
                   <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 group-hover:from-teal-300 group-hover:to-teal-500 transition-all duration-300">
                     {stat.value}
                   </div>
