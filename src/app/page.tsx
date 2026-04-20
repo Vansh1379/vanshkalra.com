@@ -18,8 +18,8 @@ export default function Home() {
           {/* Grid pattern */}
           <div className="absolute inset-0 hero-grid pointer-events-none" />
           {/* Gradient orbs */}
-          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px] pointer-events-none" />
-          <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-cyan-500/8 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px] pointer-events-none animate-float-slow" />
+          <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-cyan-500/8 rounded-full blur-[100px] pointer-events-none animate-float-slow" style={{ animationDelay: "-6s" }} />
 
           <div className="max-w-6xl mx-auto w-full">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -351,10 +351,12 @@ export default function Home() {
                   href={project.github_link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative block rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] overflow-hidden transition-all duration-500 hover:border-teal-500/20 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/5"
+                  className="group relative block rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] overflow-hidden transition-all duration-500 hover:border-teal-500/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/10"
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/5 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
-                  <div className="aspect-video overflow-hidden">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="aspect-video overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <img
                       src={project.image.src}
                       alt={project.name}
@@ -397,9 +399,10 @@ export default function Home() {
         </div>
 
         {/* ── CTA Section ── */}
-        <div className="relative z-10 border-t border-white/5">
+        <div className="relative z-10 border-t border-white/5 overflow-hidden">
+          <div className="absolute inset-0 dot-mesh pointer-events-none" />
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-teal-500/5 rounded-full blur-[100px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-teal-500/10 rounded-full blur-[100px] animate-pulse-slow" />
           </div>
           <div className="max-w-4xl mx-auto px-6 py-24 text-center relative">
             <FadeIn>
