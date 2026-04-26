@@ -4,19 +4,32 @@ import { FadeIn, StaggerChildren, StaggerItem, ScaleIn } from "@/components/ui/m
 import NavBar from "@/components/NavBar";
 import Link from "next/link";
 import { projects, technologies } from "@/constants";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import RotatingText from "@/components/ui/RotatingText";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const spotlight = useMotionTemplate`radial-gradient(500px circle at ${mouseX}px ${mouseY}px, rgba(20,184,166,0.08), transparent 70%)`;
+
   return (
     <div className="min-h-screen bg-neutral-950">
       <NavBar />
       <div className="relative">
         {/* ── Hero Section ── */}
-        <div className="min-h-[calc(100vh-60px)] w-full rounded-md relative flex flex-col items-center justify-center antialiased px-4 overflow-hidden">
+        <div
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            mouseX.set(e.clientX - rect.left);
+            mouseY.set(e.clientY - rect.top);
+          }}
+          className="min-h-[calc(100vh-60px)] w-full rounded-md relative flex flex-col items-center justify-center antialiased px-4 overflow-hidden"
+        >
           {/* Grid pattern */}
           <div className="absolute inset-0 hero-grid pointer-events-none" />
+          {/* Mouse spotlight */}
+          <motion.div className="absolute inset-0 pointer-events-none" style={{ background: spotlight }} />
           {/* Gradient orbs */}
           <div className="absolute top-1/4 -left-32 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px] pointer-events-none animate-float-slow" />
           <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-cyan-500/8 rounded-full blur-[100px] pointer-events-none animate-float-slow" style={{ animationDelay: "-6s" }} />
@@ -205,7 +218,8 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-px bg-teal-500" />
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+              <div className="w-10 h-px bg-gradient-to-r from-teal-500 to-transparent" />
               <span className="text-sm text-teal-400 uppercase tracking-widest font-medium">
                 About Me
               </span>
@@ -239,7 +253,8 @@ export default function Home() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 pb-24">
           <FadeIn>
             <div className="flex items-center gap-3 mb-10">
-              <div className="w-10 h-px bg-teal-500" />
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+              <div className="w-10 h-px bg-gradient-to-r from-teal-500 to-transparent" />
               <span className="text-sm text-teal-400 uppercase tracking-widest font-medium">
                 What I Do
               </span>
@@ -275,10 +290,13 @@ export default function Home() {
                 title: "DevOps & Deployment",
                 desc: "Containerized deployments with Docker, monorepo management with Turborepo, and CI/CD pipelines for reliable shipping.",
               },
-            ].map((card) => (
+            ].map((card, idx) => (
               <StaggerItem key={card.title}>
                 <div className="group relative p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500 hover:border-teal-500/20 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/5 h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/5 group-hover:to-transparent rounded-2xl transition-all duration-500 pointer-events-none" />
+                  <span className="absolute top-5 right-5 text-xs font-mono text-neutral-700 group-hover:text-teal-500/60 transition-colors duration-300">
+                    0{idx + 1}
+                  </span>
                   <div className="relative">
                     <div className="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-4 group-hover:bg-teal-500/20 group-hover:scale-110 transition-all duration-300">
                       {card.icon}
@@ -300,7 +318,8 @@ export default function Home() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 pb-24">
           <FadeIn>
             <div className="flex items-center gap-3 mb-10">
-              <div className="w-10 h-px bg-teal-500" />
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+              <div className="w-10 h-px bg-gradient-to-r from-teal-500 to-transparent" />
               <span className="text-sm text-teal-400 uppercase tracking-widest font-medium">
                 Tech Stack
               </span>
@@ -330,7 +349,8 @@ export default function Home() {
           <FadeIn>
             <div className="flex items-center justify-between mb-10">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-px bg-teal-500" />
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+              <div className="w-10 h-px bg-gradient-to-r from-teal-500 to-transparent" />
                 <span className="text-sm text-teal-400 uppercase tracking-widest font-medium">
                   Featured Work
                 </span>
